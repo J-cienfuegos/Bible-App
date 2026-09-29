@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#292524">
+
+    <title>Bible</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div>
+                <h1>Bible</h1>
+                <p id="header-subtitle">Your daily word</p>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- HOME -->
+    <main id="home-screen" class="screen">
+
+        <section class="card daily-verse">
+
+            <p class="section-label">VERSE OF THE DAY</p>
+
+            <h2 id="daily-reference">Loading...</h2>
+
+            <p id="daily-text">
+                Loading Bible...
+            </p>
+
+            <button id="save-daily-verse">🔖 Save Verse</button>
+            <button id="new-verse">Give Me Another Verse</button>
+
+        </section>
+
+
+        <section class="card">
+
+            <p class="section-label">HOW ARE YOU FEELING?</p>
+
+            <div class="feelings">
+
+                <button class="feeling" data-feeling="happy">
+                    😊 Happy
+                </button>
+
+                <button class="feeling" data-feeling="sad">
+                    😔 Sad
+                </button>
+
+                <button class="feeling" data-feeling="anxious">
+                    😟 Anxious
+                </button>
+
+                <button class="feeling" data-feeling="angry">
+                    😡 Angry
+                </button>
+
+                <button class="feeling" data-feeling="lonely">
+                    🥺 Lonely
+                </button>
+
+                <button class="feeling" data-feeling="grateful">
+                    🙏 Grateful
+                </button>
+
+                <button class="feeling" data-feeling="afraid">
+                    😨 Afraid
+                </button>
+
+                <button class="feeling" data-feeling="hopeful">
+                    ❤️ Hopeful
+                </button>
+
+            </div>
+
+            <div id="feeling-result" class="feeling-result hidden">
+
+                <p id="feeling-name" class="section-label"></p>
+
+                <h2 id="feeling-reference"></h2>
+
+                <p id="feeling-text"></p>
+
+                <button id="save-feeling-verse">🔖 Save Verse</button>
+                <button id="another-feeling-verse">Give Me Another</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BIBLE -->
+    <main id="bible-screen" class="screen hidden">
+
+        <section class="bible-navigation">
+
+            <button id="back-to-books" class="back-button hidden">
+                ← Books
+            </button>
+
+            <h2 id="bible-title">Bible</h2>
+
+        </section>
+
+        <!-- Bible search -->
+        <section class="card bible-search">
+            <p class="section-label">SEARCH THE BIBLE</p>
+
+            <div class="search-row">
+                <input
+                    type="search"
+                    id="bible-search-input"
+                    placeholder="Search for a word or phrase..."
+                >
+
+                <button id="bible-search-button">
+                    Search
+                </button>
+            </div>
+
+            <div id="search-results"></div>
+        </section>
+
+        <!-- Book selection -->
+        <section id="book-selection">
+
+            <h3>Old Testament</h3>
+
+            <div id="old-testament" class="book-grid"></div>
+
+
+            <h3>New Testament</h3>
+
+            <div id="new-testament" class="book-grid"></div>
+
+        </section>
+
+
+        <!-- Chapter selection -->
+        <section id="chapter-selection" class="hidden">
+
+            <h3 id="selected-book-name"></h3>
+
+            <div id="chapter-grid" class="chapter-grid"></div>
+
+        </section>
+
+
+        <!-- Reading -->
+        <section id="reading-screen" class="hidden">
+
+            <div class="reading-header">
+
+                <button id="back-to-chapters">
+                    ← Chapters
+                </button>
+
+                <h2 id="reading-title"></h2>
+
+            </div>
+
+            <div id="verse-list"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- HIGHLIGHTS -->
+    <main id="highlights-screen" class="screen hidden">
+
+        <section class="card">
+
+            <p class="section-label">MY HIGHLIGHTS</p>
+
+            <h2>Highlighted Verses</h2>
+
+            <div id="highlight-list"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Bottom navigation -->
+    <nav class="bottom-nav">
+
+        <button class="nav-button active" data-screen="home-screen">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-button" data-screen="bible-screen">
+            <span class="nav-icon">📖</span>
+            <span>Bible</span>
+        </button>
+
+        <button class="nav-button" data-screen="highlights-screen">
+            <span class="nav-icon">🔖</span>
+            <span>Highlights</span>
+        </button>
+
+    </nav>
+
+
+    <script src="app.js?v=2"></script>
+
+</body>
+</html>

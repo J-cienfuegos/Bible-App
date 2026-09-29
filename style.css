@@ -1,0 +1,594 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f3ef;
+    color: #292524;
+
+    min-height: 100vh;
+
+    padding-bottom: 90px;
+}
+
+
+/* Header */
+
+.app-header {
+    background: #292524;
+    color: white;
+
+    padding: 28px 20px;
+
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.app-header p {
+    opacity: 0.75;
+}
+
+
+/* Screens */
+
+.screen {
+    max-width: 650px;
+    margin: auto;
+
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Cards */
+
+.card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Labels */
+
+.section-label {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #78716c;
+
+    margin-bottom: 12px;
+}
+
+
+/* Daily verse */
+
+.daily-verse h2 {
+    font-size: 22px;
+
+    margin-bottom: 14px;
+}
+
+.daily-verse p:not(.section-label) {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* Buttons */
+
+button {
+    font-family: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+#new-verse {
+    border: none;
+
+    background: #292524;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+
+/* Feelings */
+
+.feelings {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.feeling {
+    border: 1px solid #e7e5e4;
+
+    background: #fafaf9;
+
+    padding: 14px 8px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+}
+
+
+/* Bible navigation */
+
+.bible-navigation {
+    margin-bottom: 20px;
+}
+
+.bible-navigation h2 {
+    font-size: 26px;
+}
+
+.back-button {
+    border: none;
+
+    background: none;
+
+    color: #57534e;
+
+    font-size: 16px;
+
+    padding: 8px 0;
+
+    margin-bottom: 8px;
+}
+
+
+/* Book list */
+
+#book-selection h3 {
+    margin: 25px 0 12px;
+
+    font-size: 18px;
+}
+
+.book-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.book-button {
+    background: white;
+
+    border: 1px solid #e7e5e4;
+
+    border-radius: 12px;
+
+    padding: 15px 10px;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    color: #292524;
+}
+
+.book-button:active,
+.chapter-button:active {
+    transform: scale(0.97);
+}
+
+
+/* Chapters */
+
+#selected-book-name {
+    margin-bottom: 15px;
+
+    font-size: 22px;
+}
+
+.chapter-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+}
+
+.chapter-button {
+    background: white;
+
+    border: 1px solid #e7e5e4;
+
+    border-radius: 10px;
+
+    padding: 14px 5px;
+
+    font-size: 16px;
+}
+
+
+/* Reading */
+
+.reading-header {
+    margin-bottom: 20px;
+}
+
+.reading-header button {
+    background: none;
+
+    border: none;
+
+    color: #57534e;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.reading-header h2 {
+    font-size: 25px;
+}
+
+
+/* Individual verses */
+
+.verse {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-bottom: 8px;
+
+    line-height: 1.75;
+
+    font-size: 17px;
+
+    border: 1px solid transparent;
+
+    transition:
+        background 0.15s,
+        border 0.15s;
+}
+
+.verse:active {
+    transform: scale(0.99);
+}
+
+.verse-number {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #78716c;
+
+    margin-right: 7px;
+
+    vertical-align: top;
+}
+
+
+/* Highlighted verse */
+
+.verse.highlighted {
+    background: #fff3a6;
+
+    border-color: #e7d76a;
+}
+
+
+/* Highlights */
+
+#highlights-screen h2 {
+    margin-bottom: 20px;
+}
+
+.highlight-item {
+    background: #fff3a6;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+}
+
+.highlight-reference {
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.highlight-text {
+    line-height: 1.6;
+}
+
+
+/* Empty highlights */
+
+.empty-highlights {
+    color: #78716c;
+
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+
+/* Bottom navigation */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 75px;
+
+    background: white;
+
+    border-top: 1px solid #e7e5e4;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    z-index: 100;
+}
+
+.nav-button {
+    background: none;
+
+    border: none;
+
+    color: #78716c;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    font-size: 20px;
+}
+
+.nav-button span:last-child {
+    font-size: 11px;
+}
+
+.nav-button.active {
+    color: #292524;
+
+    font-weight: 700;
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+
+/* Desktop */
+
+@media (min-width: 700px) {
+
+    .bottom-nav {
+        max-width: 650px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+        border:
+            1px solid #e7e5e4;
+
+        border-radius:
+            18px 18px 0 0;
+    }
+
+    .book-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+/* Feeling result */
+
+.feeling-result {
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e7e5e4;
+}
+
+.feeling-result h2 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.feeling-result > p:not(.section-label) {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+#another-feeling-verse {
+    border: none;
+
+    background: #292524;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+/* Improve touch responsiveness on phones */
+
+button,
+.verse {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+button:active {
+    opacity: 0.75;
+}
+
+.unsave-button {
+    margin-top: 10px;
+    background: transparent;
+    color: #8b5e3c;
+    border: 1px solid #d6c2ad;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.bible-search {
+    margin-bottom: 20px;
+}
+
+.search-row {
+    display: flex;
+    gap: 8px;
+}
+
+#bible-search-input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #d6d0c8;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #faf9f7;
+}
+
+#bible-search-button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #292524;
+    color: white;
+    font-size: 15px;
+}
+
+#search-results {
+    margin-top: 15px;
+}
+
+.search-result {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e1dc;
+}
+
+.search-result-reference {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.search-result-text {
+    line-height: 1.5;
+}
+
+.search-save-button {
+    margin-top: 10px;
+    background: transparent;
+    color: #8b5e3c;
+    border: 1px solid #d6c2ad;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.note-button {
+    margin-top: 10px;
+    margin-right: 6px;
+    background: transparent;
+    color: #5f6f52;
+    border: 1px solid #b9c5ae;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.highlight-note {
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.verse-note-button {
+    display: block;
+    margin-top: 8px;
+    background: transparent;
+    color: #5f6f52;
+    border: 1px solid #b9c5ae;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: fit-content;
+    margin: 0 auto;
+}
